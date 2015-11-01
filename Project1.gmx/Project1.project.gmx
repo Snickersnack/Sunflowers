@@ -18,10 +18,18 @@
     <sprite>sprites\RightTirnalge</sprite>
     <sprite>sprites\LeftTrinagle</sprite>
     <sprite>sprites\sprite11</sprite>
+    <sprite>sprites\sprite12</sprite>
+    <sprite>sprites\sprite13</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <background>background\background2</background>
+    <background>background\background3</background>
+    <background>background\backgroundLayer4</background>
+    <background>background\backgroundLayer3</background>
+    <background>background\backgroundLayer2</background>
+    <background>background\Foreground</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -39,13 +47,15 @@
     <object>objects\Left_button</object>
     <object>objects\right_button</object>
     <object>objects\RightButton_Triangle</object>
+    <object>objects\Tree</object>
+    <object>objects\Controller</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\room0</room>
     <room>rooms\room1</room>
+    <room>rooms\room0</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
