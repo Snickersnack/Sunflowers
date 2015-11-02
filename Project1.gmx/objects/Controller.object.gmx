@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>view_xview/6</string>
+            <string>view_xview/2</string>
           </argument>
         </arguments>
       </action>
@@ -53,7 +53,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>view_xview/6</string>
+            <string>view_xview/4</string>
           </argument>
         </arguments>
       </action>
@@ -74,6 +74,54 @@
           <argument>
             <kind>1</kind>
             <string>background_x[2]</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>view_xview/6</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>background_x[3]</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>view_xview/8</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>background_x[4]</string>
           </argument>
           <argument>
             <kind>0</kind>

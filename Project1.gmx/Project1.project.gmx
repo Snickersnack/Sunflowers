@@ -20,16 +20,25 @@
     <sprite>sprites\sprite11</sprite>
     <sprite>sprites\sprite12</sprite>
     <sprite>sprites\sprite13</sprite>
+    <sprite>sprites\Layer_1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
-    <background>background\background2</background>
     <background>background\background3</background>
-    <background>background\backgroundLayer4</background>
-    <background>background\backgroundLayer3</background>
-    <background>background\backgroundLayer2</background>
-    <background>background\Foreground</background>
+    <background>background\background2</background>
+    <backgrounds name="Wilson Test Background">
+      <background>background\backgroundLayer2</background>
+      <background>background\Foreground</background>
+      <background>background\backgroundLayer4</background>
+      <background>background\backgroundLayer3</background>
+    </backgrounds>
+    <backgrounds name="Nicole Test Background">
+      <background>background\Layer_5</background>
+      <background>background\Layer_2</background>
+      <background>background\Layer_3</background>
+      <background>background\Layer_4</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -49,12 +58,14 @@
     <object>objects\RightButton_Triangle</object>
     <object>objects\Tree</object>
     <object>objects\Controller</object>
+    <object>objects\Layer_11</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>
   </timelines>
   <rooms name="rooms">
     <room>rooms\room1</room>
+    <room>rooms\room3</room>
     <room>rooms\room0</room>
   </rooms>
   <help>
