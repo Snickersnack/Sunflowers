@@ -49,11 +49,56 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.directionface</string>
+            <string>globalDirectionFace</string>
           </argument>
           <argument>
             <kind>0</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>test</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>depth = 8;
+</string>
           </argument>
         </arguments>
       </action>
@@ -85,22 +130,22 @@ if (mouse_check_button(mb_left)){
     if (mouse_x &gt; x){
         sprite_index = sprite4;
         move_towards_point(mouse_x,y,5);
-        global.directionface = 1;}
+        globalDirectionFace = 1;}
   
    else 
     {sprite_index = sprite3;
     move_towards_point(mouse_x,y,5);
-    global.directionface = 0;} 
+    globalDirectionFace = 0;} 
 
 }
 
 else{
 
-if (global.directionface==0){
+if (globalDirectionFace==0){
         sprite_index = LeftStop;
         speed = 0;}
         
- if (global.directionface ==1){
+ if (globalDirectionFace ==1){
         sprite_index = RightStop;
         speed = 0;}
     
@@ -131,11 +176,12 @@ if (global.directionface==0){
             <string>draw_self();
 xview = view_xview 
 yview = view_yview
-draw_text(x+50,y+ 50,x);
-draw_text (xview + 400,yview + 300, mouse_x);
-draw_text (xview + 400,yview + 310, mouse_y);
-draw_text (x+150,y+ 150, sprite_index);
-draw_text (x+150,y+ 140, global.directionface);
+draw_text(x+50,y+ 50, "X coord of Hero: " + string(x));
+draw_text (xview + 400, yview + 300, "Mouse x: " + string(mouse_x));
+draw_text (xview + 400, yview + 310, "Mouse y: " + string(mouse_y));
+draw_text (x+150,y+ 150, "Sprite Index: " + string(sprite_index));
+draw_text (x+150,y+ 140, "Facing Direction: " + string(globalDirectionFace));
+draw_text (x+150, y+130, "FPS: " + string(fps));
 </string>
           </argument>
         </arguments>

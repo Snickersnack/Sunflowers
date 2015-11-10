@@ -41,16 +41,14 @@
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts">
-    <script>scripts\script0.gml</script>
-  </scripts>
+  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\font0</font>
   </fonts>
   <objects name="objects">
     <object>objects\object0</object>
     <object>objects\Hero</object>
-    <object>objects\object1</object>
+    <object>objects\Nicole</object>
     <object>objects\object3</object>
     <object>objects\LeftButton_Triangle</object>
     <object>objects\Left_button</object>

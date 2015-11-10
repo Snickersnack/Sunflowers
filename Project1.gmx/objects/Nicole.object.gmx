@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//can_draw=false
+            <string>can_draw=false
 
 message[0]="Test1"
 
@@ -58,6 +58,8 @@ hold=0; //if we hold 'Z', the text will render faster
  
 
 message_length=string_length(message[message_current]); //get the number of characters in the first message
+
+depth = 2;
 </string>
           </argument>
         </arguments>
@@ -83,10 +85,10 @@ message_length=string_length(message[message_current]); //get the number of char
             <string>if mouse_check_button_pressed(mb_left) &amp;&amp; position_meeting(mouse_x,mouse_y, self)
 {
 
-//can_draw=!can_draw
+can_draw=!can_draw
 
-//}
-//if can_draw=true{
+}
+if can_draw=true{
     
 Hero.speed = 0;
 if Hero.globalDirectionFace{
@@ -95,13 +97,12 @@ else{
 Hero.sprite_index = LeftStop;}
 
 if characters&lt;message_length{ //if current character count is less than the amount in current message
-hold=keyboard_check(ord("Z")); //hold is true or false if we hold 'Z' or not
+hold= mouse_check_button_pressed(mb_left); //hold is true or false if we hold 'Z' or not
 characters+=increase*(1+hold); //increase speed based on hold
 message_draw=string_copy(message[message_current],0,characters); //copy string to current character
 }
-else{ //if current character is more than the amount in the current message
-if keyboard_check_pressed(ord("Z")){ //if we press Z...
-
+else{ 
+if mouse_check_button_pressed(mb_left){ 
 if message_current&lt;message_end{ //if there are more messages left to show (0 -&gt; 6, in our case)
 message_current+=1; //increase the message by 1
 message_length=string_length(message[message_current]); //get the new character length for message
@@ -109,7 +110,57 @@ characters=0; //set the characters back to 0
 message_draw=""; //clear the drawn text
 }
 else{ //if our messages are done (we reach 6, in our case)...
-//can_draw = false; 
+can_draw = false; 
+//instance_destroy(); //destroy the object
+}
+}
+}
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if mouse_check_button_pressed(mb_left) &amp;&amp; position_meeting(mouse_x,mouse_y, self){
+can_draw = true;
+Hero.speed = 0;
+if Hero.globalDirectionFace{
+Hero.sprite_index = RightStop;}
+else{
+Hero.sprite_index = LeftStop;}
+
+
+if characters&lt;message_length{ //if current character count is less than the amount in current message
+hold= mouse_check_button_pressed(mb_left); //hold is true or false if we hold 'Z' or not
+characters+=increase*(1+hold); //increase speed based on hold
+message_draw=string_copy(message[message_current],0,characters); //copy string to current character
+}
+else{ 
+if mouse_check_button_pressed(mb_left) &amp;&amp; ((mouse_x &gt; x-75) &amp;&amp; (mouse_x &lt; x+325)) &amp;&amp; ((mouse_y &gt; y-50) &amp;&amp; (mouse_y &lt;y+10)){ 
+if message_current&lt;message_end{ //if there are more messages left to show (0 -&gt; 6, in our case)
+message_current+=1; //increase the message by 1
+message_length=string_length(message[message_current]); //get the new character length for message
+characters=0; //set the characters back to 0
+message_draw=""; //clear the drawn text
+}
+else{ //if our messages are done (we reach 6, in our case)...
+can_draw = false; 
 //instance_destroy(); //destroy the object
 }
 }
@@ -142,12 +193,16 @@ else{ //if our messages are done (we reach 6, in our case)...
 
 if can_draw == true
 {
+//draw_set_color(c_white);
+//draw_rectangle(x-75,y-50,x+325,y+10, false);
+//draw_set_color(c_black);
+//draw_rectangle(x-75,y-50,x+325,y+10, .5);
+//draw_text_ext(x-65, y-40, message_draw, 25, 370);
 draw_set_color(c_white);
-draw_rectangle(x-75,y-50,x+325,y+10, false);
+draw_rectangle(view_xview,view_yview,view_xview+1062,view_yview+210, false);
 draw_set_color(c_black);
-draw_rectangle(x-75,y-50,x+325,y+10, .5);
-draw_text_ext(x-65, y-40, message_draw, 25, 370);
-
+draw_rectangle(view_xview,view_yview,view_xview+1062,view_yview+210, .5);
+draw_text_ext(view_xview + 365, view_yview + 80, message_draw, 25, 370);
 }
 
 </string>
